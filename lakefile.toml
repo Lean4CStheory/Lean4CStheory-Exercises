@@ -1,4 +1,5 @@
 name = "Lean4CStheoryExercises"
+enableArtifactCache = true
 version = "0.1.0"
 defaultTargets = ["Lean4CStheoryExercises"]
 

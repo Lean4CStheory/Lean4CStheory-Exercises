@@ -153,11 +153,15 @@ theorem majority_cost_step (x y : Nat) (rest : List Nat) :
       majorityCost (input.take (input.length / 2)) +
       majorityCost (input.drop (input.length / 2)) + 2 * input.length := by
   dsimp only
+  let input := x :: y :: rest
+  let left := input.take (input.length / 2)
+  let right := input.drop (input.length / 2)
+  let recursiveCost := majorityCost left + majorityCost right
+  let combineCost := (combineCandidates input (majority left) (majority right)).2
+  have hcombine : combineCost ≤ 2 * input.length :=
+    combineCandidates_cost_le input (majority left) (majority right)
   rw [majorityCost, majorityRun]
-  have hcombine := combineCandidates_cost_le (x :: y :: rest)
-    (majorityRun ((x :: y :: rest).take ((x :: y :: rest).length / 2))).1
-    (majorityRun ((x :: y :: rest).drop ((x :: y :: rest).length / 2))).1
-  change _ ≤ _ + _ + _
+  change recursiveCost + combineCost ≤ recursiveCost + 2 * input.length
   sorry
 
 -- Provided: a size-only upper bound, with the same two subproblem sizes.

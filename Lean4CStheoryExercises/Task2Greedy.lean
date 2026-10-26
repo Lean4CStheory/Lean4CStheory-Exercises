@@ -16,7 +16,7 @@ Goal: pack as many items as possible, with ONE item per box.
 An item fits when its size is at most the box capacity.
 Greedy rule: choose the largest remaining item that fits.
 
-Reference: Greedy.pdf, slides 7-14.
+Reference: Greedy.pdf.
 
 ## 1. Complete the algorithm
 

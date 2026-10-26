@@ -15,7 +15,7 @@ Warnings about `sorry` are expected until finished.
 Goal: choose non-overlapping jobs with maximum total weight.
 A job ending when another starts is compatible with it.
 Assume positive durations and weights, with jobs sorted by finish time.
-Reference: DynamicProgramming.pdf, slides 6-16.
+Reference: DynamicProgramming.pdf.
 
 ## 1. Find the compatible prefix
 
